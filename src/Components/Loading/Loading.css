@@ -1,0 +1,16 @@
+/* .input {
+  width: 80%;
+} */
+
+/* #form {
+  width: 70%;
+  margin: 20px auto;
+} */
+
+#loading-btn {
+  width: 100%;
+  max-width: 150px;
+  height: 35px;
+  margin: 10px 0;
+  border-radius: 0;
+}

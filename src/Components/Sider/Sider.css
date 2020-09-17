@@ -1,0 +1,54 @@
+.my-sider {
+  background: linear-gradient(-154deg, #616d86, #1f1c2c);
+  position: relative;
+  overflow: hidden;
+}
+
+.logo {
+  height: 32px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.logo img {
+  width: 40px;
+}
+
+.my-sider #side-logout #s-logout {
+  color: #fff;
+  font-size: 26px;
+  padding: 20px;
+}
+
+.my-sider #side-logout {
+  bottom: 0%;
+  left: 0%;
+  position: absolute;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.my-sider #side-logout:hover {
+  background: #0e0c14;
+  cursor: pointer;
+}
+
+#side-menu {
+  width: 100%;
+  top: 35px;
+  position: relative;
+  text-align: center;
+}
+
+#side-menu .item {
+  color: #fff;
+  padding: 20px;
+  font-size: 30px;
+  transition: all 0.2s ease-in-out;
+}
+#side-menu .item:hover {
+  background: #1f1c2c;
+  cursor: pointer;
+}

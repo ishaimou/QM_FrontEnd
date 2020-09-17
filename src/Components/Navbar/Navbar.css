@@ -1,0 +1,57 @@
+.nav {
+  height: 100%;
+  background-color: (212, 212, 212);
+  width: 100%;
+  display: block;
+  padding-right: 15px;
+  font-size: 20px;
+}
+.nav .avatar-div, .nav .notif-div {
+    height: 100%;
+    text-align: center;
+    width: 60px;
+    float: right;
+}
+
+.nav .avatar-div:hover,.nav .notif-div:hover {
+    background-color: #e6f7ff;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+}
+
+.menu {
+    width: 100px;
+}
+.search {
+    margin-left: 30px;
+    float: left;
+    width: 200px;
+    transition: all .4s ease-in-out;
+}
+.search:hover,.search:focus {
+    width: 350px;
+    transition: all .4s ease-in-out;
+}
+.search:focus {
+    width: 50%;
+    transition: all .4s ease-in-out;
+}
+.search #input {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid rgb(221, 220, 220);
+}
+.search #input:hover {
+    border-bottom: 1px solid rgb(81, 105, 240);
+}
+.search #input:focus {
+    border-bottom:1px solid rgb(81, 105, 240);
+    transition: all .4s ease-in-out;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .nav {
+        display: none;
+    }
+  }

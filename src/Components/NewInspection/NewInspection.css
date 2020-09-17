@@ -1,0 +1,14 @@
+.ant-steps #mystep {
+  background: #000;
+  display: none;
+}
+
+.col-input {
+  text-align: center;
+}
+
+@media only screen and (max-width: 800px) {
+  #mystp {
+    display: none;
+  }
+}

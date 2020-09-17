@@ -1,0 +1,10 @@
+#profile-container {
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+#profile-submit {
+  min-width: 150px;
+  height: 35px;
+}

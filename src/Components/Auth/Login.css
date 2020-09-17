@@ -1,0 +1,33 @@
+.l-form {
+  width: 65%;
+  margin: auto;
+  height: 75%;
+  box-sizing: border-box;
+  text-align: left;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.l-form .l-input {
+  margin: 15% 0 10% 0;
+}
+
+.l-form .l-forgot {
+  float: right;
+}
+.l-login-form-button {
+  width: 100%;
+}
+#l-sign-up {
+  margin-top: 15%;
+  background-color: transparent;
+  color: #1d8ffd;
+}
+
+.l-flex {
+  margin-top: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

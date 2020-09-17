@@ -1,0 +1,50 @@
+.form {
+  width: 100%;
+  margin: auto;
+  height: 75%;
+  box-sizing: border-box;
+  text-align: left;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.login-form-button {
+  width: 100%;
+  /*  */
+  margin: auto;
+}
+.input {
+  margin: 0% auto 5% auto;
+  width: 60%;
+}
+#sign-up {
+  margin-top: 6%;
+}
+
+#sign-in {
+  margin-top: 6%;
+  background-color: transparent;
+  color: #1d8ffd;
+}
+
+/* .Field {
+  height: 50px;
+} */
+.btn {
+  /* height: 50px; */
+  margin: auto;
+  width: 100%;
+}
+
+.box {
+  margin: auto;
+  width: 60%;
+}
+
+.spinDiv {
+  text-align: center;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 30px 50px;
+  margin: 20px 0;
+}

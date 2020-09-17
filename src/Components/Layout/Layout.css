@@ -1,0 +1,46 @@
+/* @import "antd/dist/antd.css"; */
+.l-trigger {
+  font-size: 18px;
+  line-height: 64px !important;
+  padding: 0 3%;
+  cursor: pointer;
+  color: rgba(66, 79, 102, 1) !important;
+  display: none !important;
+  float: left;
+}
+
+.md-logo {
+  float: right;
+  margin-right: 15px;
+  display: none;
+}
+.md-logo img {
+  width: 45px;
+}
+.l-trigger:hover {
+  color: #236eac;
+  height: 100%;
+  background-color: #e6f7ff;
+}
+#header {
+  background: #fff;
+  padding: 0;
+  box-shadow: 0px 0px 8px rgba(0, 21, 41, 0.3);
+}
+#Content {
+  margin: 24px 16px 0 16px;
+  padding: 24px;
+  background: #fff;
+  min-height: 280px;
+}
+@media only screen and (max-width: 767px) {
+  .l-trigger {
+    font-size: 24px;
+    float: left;
+    transition: all 0.3s;
+    display: block !important;
+  }
+  .md-logo {
+    display: block;
+  }
+}

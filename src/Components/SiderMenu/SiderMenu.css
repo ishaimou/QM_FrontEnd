@@ -1,0 +1,48 @@
+.draw .ant-drawer-content-wrapper .ant-drawer-header {
+    color: #fff;
+    border-radius: 0;
+    height: 150px;
+    position: relative;
+    background: rgb(95, 99, 117);
+
+    box-sizing: content-box;
+  }
+  .draw .ant-drawer-content-wrapper .ant-drawer-header .ant-avatar {
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    transition: all 0.2s ease-in-out;
+  box-shadow: 0 3px 5px rgba(0,0,0,.4);
+
+  
+  }
+  
+  .draw .ant-drawer-content-wrapper .ant-drawer-header #header-username {
+
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    height: 40px;
+    background: rgb(95, 99, 117);
+    padding: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.26);
+  }
+  .ant-menu-item .ant-input-search  #input{
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid rgb(221, 220, 220);
+}
+.ant-menu-item .ant-input-search #input:hover {
+    border-bottom: 1px solid rgb(81, 105, 240);
+}
+.ant-menu-item .ant-input-search #input:focus {
+    border-bottom:1px solid rgb(81, 105, 240);
+    transition: all .4s ease-in-out;
+}

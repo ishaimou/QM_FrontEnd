@@ -1,0 +1,134 @@
+.card {
+  background: #fff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.12),
+    0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  margin-top: 10%;
+  text-align: left;
+  padding: 0 0px;
+  width: 85%;
+  float: left;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: none;
+  border-radius: 5px;
+}
+
+.card #title {
+  color: #2c3e50;
+  font-size: 1rem;
+  padding: 20px 0 5px;
+  width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  text-align: center;
+  border-radius: 5px;
+}
+.card #title-container {
+  border-radius: 6px;
+}
+.card #title-container:hover,
+.card #title-container:active {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.123);
+  transition: box-shadow 0.2s ease-in-out;
+  width: 105%;
+  background: #fff;
+  margin-left: -3%;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.card #title-container:hover + #sub-title {
+  border-top: 1px solid rgba(100, 100, 100, 0);
+  transition: all 0.2s ease-in-out;
+}
+.card #sub-title {
+  border-top: 1px solid rgba(100, 100, 100, 0.2);
+  border-bottom: 1px solid rgba(100, 100, 100, 0.2);
+  padding: 10px;
+  margin: 0 5%;
+}
+
+.card #sub-title #username {
+  font-size: 1rem;
+  color: #34495ed2;
+}
+.card #sub-title #stat {
+  float: right;
+  color: #16a085;
+  position: relative;
+}
+.card #sub-title #stat #circle {
+  width: 8px;
+  height: 8px;
+  background: #16a085;
+  border-radius: 100%;
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.card #icon {
+  font-size: 16px;
+  padding: 10px 5px 5px 5%;
+}
+.card #icon span {
+  font-size: 15px;
+  padding: 10px 5px 5px 5px;
+}
+.card #icon i {
+  font-size: 1.6rem;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.card #expand {
+  text-align: center;
+  border-top: 1px solid rgba(100, 100, 100, 0.2);
+  padding: 5px 0;
+  margin: 5px 5%;
+}
+.card #expand:hover {
+  cursor: pointer;
+}
+.card #icons {
+  text-align: left;
+}
+
+@media only screen and (max-width: 1200px) {
+  .card #progress {
+    width: 100%;
+    margin: 0;
+    vertical-align: middle;
+    text-align: center;
+    margin-top: 0%;
+  }
+}
+
+.card #content {
+  margin: 6% 0;
+  margin-bottom: 0;
+  display: block;
+}
+
+.card #footer {
+  float: left;
+  border-top: 1px solid rgba(100, 100, 100, 0.2);
+  padding: 20px 0;
+  margin: 0 5%;
+}
+
+.card #footer button {
+  width: 100%;
+  border-radius: 0;
+  margin: 10px 0;
+}
+#products {
+  margin: 5px;
+}
+#products-name {
+  margin-top: 3px;
+}

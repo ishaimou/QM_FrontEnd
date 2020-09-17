@@ -1,0 +1,35 @@
+@import "~antd/dist/antd.css";
+.auth-form {
+  height: 100vh;
+  background-color: #fff;
+  /* overflow: hidden; */
+}
+
+.login {
+  background-image: url("./bg.png");
+  width: 100%;
+  height: 100%;
+  /* background: #000; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+}
+
+.login .Layer {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.login .logo-form {
+  height: 100%;
+  text-align: center;
+  height: 25%;
+  box-sizing: border-box;
+  display: flex;
+}
+.login .logo-form img {
+  vertical-align: middle;
+  display: table-cell;
+  margin: auto;
+  min-width: 100px;
+  width: 15vh;
+}

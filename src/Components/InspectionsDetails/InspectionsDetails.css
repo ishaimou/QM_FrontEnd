@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css?family=Bree+Serif&display=swap");
+#inspection-head h1 {
+  display: block;
+}
+
+#inspection-head #btn {
+  width: 90%;
+  height: 40px;
+  float: right;
+  padding: 5px;
+  margin: 5px;
+}
+
+#inspection-head #stat {
+  height: 40px;
+  float: right;
+  padding: 5px;
+  margin: 5px;
+  width: 90%;
+}
+#progress {
+  margin-top: 50px;
+}
+
+#spinDiv {
+  width: 100%;
+  background: rgb(255, 255, 255);
+  /* height: 100%; */
+  text-align: center;
+  z-index: 999;
+}
+#spinDiv #spin {
+  margin-top: 30%;
+}
+
+#table-btn {
+  width: 100%;
+  max-width: 150px;
+  height: 35px;
+  margin: 10px 0;
+  border-radius: 0;
+}
+
+#table-btn #table-icon {
+  vertical-align: middle;
+}
+.edit-input {
+  width: 100%;
+  margin: 10px auto;
+}
+.edit-btn {
+  width: 100%;
+  margin-top: 20px;
+}
+
+#close {
+  height: 40px;
+}
+
+#start-tooltip {
+  position: absolute;
+  text-align: center;
+  top: 35px;
+  left: -19px;
+  background: #4b6584;
+  color: #fff;
+  padding: 6px 15px;
+  border-radius: 5px;
+}
+#start-tooltip:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #36485e;
+  z-index: 999;
+  position: absolute;
+  left: 10px;
+  bottom: -9px;
+  border-radius: 10px;
+}
+
+#end-tooltip {
+  position: absolute;
+  text-align: center;
+  top: 35px;
+  right: -19px;
+  background: #4b6584;
+  color: #fff;
+  padding: 6px 15px;
+  border-radius: 5px;
+}
+#end-tooltip:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #36485e;
+  z-index: 999;
+  position: absolute;
+  right: 10px;
+  bottom: -9px;
+  border-radius: 10px;
+}
+
+.total-events {
+  width: 100%;
+  margin: 0px 0px;
+  background: #ffffff;
+  border-radius: 5px;
+  height: 50px;
+  text-align: center;
+}
+
+#total-1 {
+  border: 3px solid #1abc9c;
+}
+#total-2 {
+  border: 3px solid #e74c3c;
+}
+#total-3 {
+  border: 3px solid #f39c12;
+}
+#total-4 {
+  border: 3px solid #353a40;
+}
+
+.total-events #total-content {
+  font-family: "Bree Serif", serif;
+  padding-top: 8px;
+}
+
+.total-events #total-content i {
+  font-size: 1.1em;
+  font-style: normal;
+}
+
+#newhourly-spin {
+  height: 200px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+#newhourly-spin #spin {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#upload-spin {
+  height: 100px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+#upload-spin #spin {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hide {
+  display: none;
+}
