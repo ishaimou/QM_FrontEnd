@@ -23,7 +23,6 @@ class RegisterForm extends Component {
           return <Redirect to="/login" />;
       }
     });
-    console.log("submit");
   };
   render() {
     if (this.props.isAuthenticated) return <Redirect to="/" />;

@@ -7,14 +7,14 @@ import {
   Tag,
   Divider,
   notification,
-  Spin
+  Spin,
 } from "antd";
 import { connect } from "react-redux";
 import axios from "axios";
 import { api } from "../../actions/config";
 import { UploadFile } from "../../actions/inspectionDetails";
 
-const getTag = line => {
+const getTag = (line) => {
   if (line.incident_ref != null) return <Tag color="red"> INCIDENT</Tag>;
   else if (line.product_ref != null) return <Tag color="green"> PRODUCT</Tag>;
   else if (line.survey_ref != null) return <Tag color="geekblue"> SURVEY</Tag>;
@@ -27,11 +27,11 @@ class Uploads extends Component {
   state = {
     isLoading: false,
     data: [],
-    loading: false
+    loading: false,
   };
-  download = id => {
+  download = (id) => {
     let link = "#";
-    this.state.data.forEach(file => {
+    this.state.data.forEach((file) => {
       if (file.id === id) {
         link = file.file;
       }
@@ -39,13 +39,13 @@ class Uploads extends Component {
     let win = window.open(link);
     win.focus();
   };
-  delete = async id => {
+  delete = async (id) => {
     const token = localStorage.getItem("token");
     const config = {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`
-      }
+        Authorization: `Bearer ${token}`,
+      },
     };
     if (token) {
       this.setState({ loading: true });
@@ -54,15 +54,15 @@ class Uploads extends Component {
         .then(() => {
           notification["success"]({
             message: "File Deleted successfully",
-            description: "Your File was deleted avec success"
+            description: "Your File was deleted avec success",
           });
           this.getData();
         })
-        .catch(e => {
+        .catch((e) => {
           this.setState({ loading: false });
           notification["error"]({
             message: "Something went wrong",
-            description: "please Upload the File again!"
+            description: "please Upload the File again!",
           });
         });
     }
@@ -71,18 +71,18 @@ class Uploads extends Component {
     {
       title: "ID",
       dataIndex: "id",
-      className: "hide"
+      className: "hide",
     },
     {
       title: "File Name",
-      dataIndex: "name"
+      dataIndex: "name",
     },
     {
       title: "Source",
       dataIndex: "Type",
       render: (_, record) => {
         return getTag(record);
-      }
+      },
     },
     {
       title: "Action",
@@ -103,8 +103,8 @@ class Uploads extends Component {
             </Button>
           </>
         );
-      }
-    }
+      },
+    },
   ];
   getData = () => {
     this.setState({ loading: true });
@@ -112,14 +112,14 @@ class Uploads extends Component {
     const config = {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`
-      }
+        Authorization: `Bearer ${token}`,
+      },
     };
     if (token) {
       axios
         .get(api + `file/?inspection_ref=${this.props.inspection.id}`, config)
-        .then(res => {
-          this.setState({ data: res.data });
+        .then((res) => {
+          this.setState({ data: res.data.results });
         });
     }
     this.setState({ loading: false });
@@ -150,7 +150,7 @@ class Uploads extends Component {
                 this.state.loading ||
                 this.props.inspection.inspection_status === "CLOSED"
                   ? "none"
-                  : "block"
+                  : "block",
             }}
           >
             <Icon type="upload" /> Upload
@@ -174,8 +174,8 @@ class Uploads extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  inspection: state.inspectionDetails.inspection
+const mapStateToProps = (state) => ({
+  inspection: state.inspectionDetails.inspection,
 });
 
 export default connect(mapStateToProps)(Uploads);

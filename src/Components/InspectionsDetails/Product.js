@@ -197,7 +197,6 @@ class Product extends Component {
       axios
         .get(api + `origin/`, config)
         .then((res) => {
-          console.log("origin: ", res.data); //!!!!!!!!!!!
           this.setState({ origin: res.data.results });
         })
         .then(() => {
@@ -215,7 +214,7 @@ class Product extends Component {
                 ) : (
                   <Popover
                     content={this.EditProduct(item.product.id)}
-                    title="Edit Origine"
+                    title="Edit Origin"
                     trigger="click"
                   >
                     <Button type="primary" ghost>
@@ -326,18 +325,18 @@ class Product extends Component {
           <Row gutter={10}>
             <Form layout="vertical" onSubmit={this.handleSubmit}>
               <Col span={24}>
-                <Form.Item label="ProductNam">
+                <Form.Item label="Product Name">
                   <ProductCascader
                     setProductId={this.setProductId.bind(this)}
                   />
                 </Form.Item>
               </Col>
               <Col span={12}>
-                <Form.Item label="Origine">
+                <Form.Item label="Origin">
                   {getFieldDecorator("Origine")(
                     <Select
                       showSearch
-                      placeholder="Origine"
+                      placeholder="Origin"
                       filterOption={(input, option) =>
                         option.props.children
                           .toLowerCase()

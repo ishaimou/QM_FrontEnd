@@ -24,15 +24,15 @@ class Resume extends Component {
     visible: false,
     incident: {},
     isLoading: false,
-    filelist: []
+    filelist: [],
   };
   getCombo = () => {
     const token = localStorage.getItem("token");
     const config = {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`
-      }
+        Authorization: `Bearer ${token}`,
+      },
     };
     if (token && this.props.inspection) {
       axios
@@ -41,18 +41,18 @@ class Resume extends Component {
             `incidentdetails/?inspection_ref=${this.props.inspection.id}&ordering=-stopping_hour`,
           config
         )
-        .then(res => {
-          res.data.forEach(item => {
+        .then((res) => {
+          res.data.results.forEach((item) => {
             if (!moment(item.resuming_hour).isValid()) {
               this.setState({ incident: item });
             }
           });
         })
-        .catch(e => console.log(e.response));
+        .catch((e) => console.log(e.response));
     }
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
@@ -252,7 +252,7 @@ class Resume extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  inspection: state.inspectionDetails.inspection
+const mapStateToProps = (state) => ({
+  inspection: state.inspectionDetails.inspection,
 });
 export default connect(mapStateToProps)(Form.create()(Resume));

@@ -7,20 +7,20 @@ import {
   LOGOUT,
   CLEARERROR,
   LOADING,
-  REGISTERED
+  REGISTERED,
 } from "./types";
 import { api } from "./config";
 
 const jwt = require("jsonwebtoken");
 
-export const loadUser = () => dispatch => {
+export const loadUser = () => (dispatch) => {
   const token = localStorage.getItem("token");
 
   const config = {
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`
-    }
+      Authorization: `Bearer ${token}`,
+    },
   };
 
   if (token) {
@@ -36,36 +36,36 @@ export const loadUser = () => dispatch => {
   }
 };
 
-export const login = (email, password) => dispatch => {
+export const login = (email, password) => (dispatch) => {
   dispatch({ type: LOADING });
   const config = {
     headers: {
-      "Content-Type": "application/json"
-    }
+      "Content-Type": "application/json",
+    },
   };
   // Request Body
   const body = JSON.stringify({ email, password });
   axios
     .post(api + "auth/", body, config)
-    .then(res => {
+    .then((res) => {
       dispatch({
         type: LOGIN_SUCCESS,
-        payload: res.data
+        payload: res.data,
       });
     })
-    .catch(e => {
+    .catch((e) => {
       if (e.response)
         dispatch({ type: LOGIN_FAILED, payload: e.response.data.detail });
       else dispatch({ type: LOGIN_FAILED, payload: "Something Went Wrong" });
     });
 };
 
-export const register = form => dispatch => {
+export const register = (form) => (dispatch) => {
   dispatch({ type: LOADING });
   const config = {
     headers: {
-      "Content-Type": "application/json"
-    }
+      "Content-Type": "application/json",
+    },
   };
   let body = {
     email: form["email"],
@@ -76,24 +76,24 @@ export const register = form => dispatch => {
       photo: null,
       cin: form["cin"],
       tel: form["tel"],
-      company_name: form["Company"]
-    }
+      company_name: form["Company"],
+    },
   };
   axios
-    .post(api + "create/", body, config)
+    .post(api + "user/create/", body, config)
     .then(() => {
       dispatch({ type: REGISTERED });
     })
-    .catch(e => {
+    .catch((e) => {
       if (e.response.data)
         dispatch({ type: LOGIN_FAILED, payload: e.response.data.email });
     });
 };
 
-export const logout = () => dispatch => {
+export const logout = () => (dispatch) => {
   dispatch({ type: LOGOUT });
 };
 
-export const clearError = () => dispatch => {
+export const clearError = () => (dispatch) => {
   dispatch({ type: CLEARERROR });
 };

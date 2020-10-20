@@ -11,7 +11,7 @@ import {
   TimePicker,
   Input,
   Upload,
-  Spin
+  Spin,
 } from "antd";
 import axios from "axios";
 import { api } from "../../actions/config";
@@ -23,18 +23,18 @@ const InputGroup = Input.Group;
 const columns = [
   {
     title: "Initial",
-    dataIndex: "Initial"
+    dataIndex: "Initial",
   },
   {
     title: "Final",
-    dataIndex: "Final"
-  }
+    dataIndex: "Final",
+  },
 ];
 
 class Survey extends Component {
   state = {
     visible: false,
-    data: []
+    data: [],
   };
   showModal = () => {
     this.setState({ visible: true });
@@ -47,8 +47,8 @@ class Survey extends Component {
     const config = {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`
-      }
+        Authorization: `Bearer ${token}`,
+      },
     };
     if (token) {
       axios
@@ -56,9 +56,9 @@ class Survey extends Component {
           api + `inter/?loading_ref=${this.props.inspection.port.id}`,
           config
         )
-        .then(res => {
+        .then((res) => {
           let data = [];
-          res.data.forEach(item => {
+          res.data.results.forEach((item) => {
             let survey = {
               key: item.id,
               Initial: moment(item.start_inter_draugth_surv).format(
@@ -66,13 +66,13 @@ class Survey extends Component {
               ),
               Final: moment(item.end_inter_draugth_surv).format(
                 "MM/DD/YYYY HH:mm"
-              )
+              ),
             };
             data.push(survey);
           });
           this.setState({ data: data });
         })
-        .catch(e => console.log(e.response));
+        .catch((e) => console.log(e.response));
     }
   };
   componentDidMount() {
@@ -83,7 +83,7 @@ class Survey extends Component {
     class extends Component {
       state = {
         filelist: [],
-        isLoading: false
+        isLoading: false,
       };
       customRequest = ({ onSuccess }) => {
         setTimeout(() => {
@@ -93,7 +93,7 @@ class Survey extends Component {
       onFileChange = ({ fileList }) => {
         this.setState({ filelist: fileList });
       };
-      handleSubmit = e => {
+      handleSubmit = (e) => {
         e.preventDefault();
         this.props.form.validateFieldsAndScroll((err, values) => {
           if (!err) {
@@ -125,9 +125,9 @@ class Survey extends Component {
                       rules: [
                         {
                           required: true,
-                          message: "Required!"
-                        }
-                      ]
+                          message: "Required!",
+                        },
+                      ],
                     })(
                       <DatePicker
                         style={{ width: "65%" }}
@@ -139,9 +139,9 @@ class Survey extends Component {
                       rules: [
                         {
                           required: true,
-                          message: "Required!"
-                        }
-                      ]
+                          message: "Required!",
+                        },
+                      ],
                     })(<TimePicker style={{ width: "35%" }} format="HH:mm" />)}
                   </InputGroup>
                 </Form.Item>
@@ -153,9 +153,9 @@ class Survey extends Component {
                       rules: [
                         {
                           required: true,
-                          message: "Required!"
-                        }
-                      ]
+                          message: "Required!",
+                        },
+                      ],
                     })(
                       <DatePicker
                         style={{ width: "65%" }}
@@ -167,9 +167,9 @@ class Survey extends Component {
                       rules: [
                         {
                           required: true,
-                          message: "Required!"
-                        }
-                      ]
+                          message: "Required!",
+                        },
+                      ],
                     })(<TimePicker style={{ width: "35%" }} format="HH:mm" />)}
                   </InputGroup>
                 </Form.Item>
@@ -252,8 +252,8 @@ class Survey extends Component {
     );
   }
 }
-const mapStateToProps = state => ({
-  inspection: state.inspectionDetails.inspection
+const mapStateToProps = (state) => ({
+  inspection: state.inspectionDetails.inspection,
 });
 
 export default connect(mapStateToProps)(Survey);

@@ -11,7 +11,7 @@ import {
   Select,
   Upload,
   Icon,
-  Spin
+  Spin,
 } from "antd";
 import { api } from "../../actions/config";
 import axios from "axios";
@@ -28,36 +28,36 @@ class Stop extends Component {
     Incident: [],
     data: [],
     filelist: [],
-    isLoading: false
+    isLoading: false,
   };
   getCombo = () => {
     const token = localStorage.getItem("token");
     const config = {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`
-      }
+        Authorization: `Bearer ${token}`,
+      },
     };
     if (token) {
       axios
         .get(api + `incident/`, config)
-        .then(res => {
+        .then((res) => {
           if (this._isMounted) {
-            this.setState({ Incident: res.data });
+            this.setState({ Incident: res.data.results });
           }
         })
-        .catch(e => console.log(e.response));
+        .catch((e) => console.log(e.response));
       axios
         .get(api + `haltevent/`, config)
-        .then(res => {
+        .then((res) => {
           if (this._isMounted) {
-            this.setState({ Halt: res.data });
+            this.setState({ Halt: res.data.results });
           }
         })
-        .catch(e => console.log(e.response));
+        .catch((e) => console.log(e.response));
     }
   };
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
@@ -94,14 +94,14 @@ class Stop extends Component {
   onCreate = () => {
     this.setState({ visible: false });
   };
-  onChange = v => {
+  onChange = (v) => {
     if (v === "Halt" && this._isMounted) {
       this.setState({ data: this.state.Halt });
     } else if (v === "Incident" && this._isMounted) {
       this.setState({ data: this.state.Incident });
     }
   };
-  disabledDate = current => {
+  disabledDate = (current) => {
     return (
       current &&
       current < moment(this.props.inspection.inspection_date).endOf("minutes")
@@ -134,9 +134,9 @@ class Stop extends Component {
                       rules: [
                         {
                           required: true,
-                          message: "Required!"
-                        }
-                      ]
+                          message: "Required!",
+                        },
+                      ],
                     })(
                       <Select
                         showSearch
@@ -164,9 +164,9 @@ class Stop extends Component {
                       rules: [
                         {
                           required: true,
-                          message: "Required!"
-                        }
-                      ]
+                          message: "Required!",
+                        },
+                      ],
                     })(
                       <Select
                         showSearch
@@ -178,7 +178,7 @@ class Stop extends Component {
                         }
                       >
                         {this.state.data
-                          ? this.state.data.map(item => (
+                          ? this.state.data.map((item) => (
                               <Option value={item.id} key={item.id}>
                                 {item.name}
                               </Option>
@@ -195,9 +195,9 @@ class Stop extends Component {
                       rules: [
                         {
                           required: true,
-                          message: "Please input the Date!"
-                        }
-                      ]
+                          message: "Please input the Date!",
+                        },
+                      ],
                     })(<DatePicker disabledDate={this.disabledDate} />)}
                   </Form.Item>
                 </Col>
@@ -208,9 +208,9 @@ class Stop extends Component {
                       rules: [
                         {
                           required: true,
-                          message: "Please input the Hour!"
-                        }
-                      ]
+                          message: "Please input the Hour!",
+                        },
+                      ],
                     })(<TimePicker format="HH:mm" />)}
                   </Form.Item>
                 </Col>
@@ -266,7 +266,7 @@ class Stop extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  inspection: state.inspectionDetails.inspection
+const mapStateToProps = (state) => ({
+  inspection: state.inspectionDetails.inspection,
 });
 export default connect(mapStateToProps)(Form.create()(Stop));
